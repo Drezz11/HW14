@@ -35,7 +35,7 @@ def get_by_rating(rating):
         "adult": ("R", "NC-17")
     }
 
-    sql = f"""select title, rating, discription from netflix
+    sql = f"""select title, rating, description from netflix
               where rating in {my_dict.get(rating, ("G", "NC-17"))}"""
     result = get_title(sql)
 
@@ -48,7 +48,7 @@ def get_by_rating(rating):
 
 @app.get("/genre/<genre>")
 def get_by_genre(genre):
-    sql = f"""select title, discription, listed_in from netflix
+    sql = f"""select title, description, listed_in from netflix
               where listed_in like '%{str(genre)[1:]}%'"""
 
     result = get_title(sql)

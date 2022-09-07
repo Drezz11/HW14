@@ -28,7 +28,7 @@ def get_by_title(title):
         return dict(item)
 
 
-def step_5(name1="Rose Mclver", name2="Ben Lamb"):
+def step_5(name1="Rose McIver", name2="Ben Lamb"):
     sql = f"""select * from netflix
               where `cast` like '%{name1}%' and `cast` like '%{name2}%'"""
     result = get_title(sql)
